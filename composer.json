@@ -9,7 +9,7 @@
         }
     ],
     "require": {
-        "php": "^7.0",
+        "php": ">=7.0",
         "dedegunawan/utility-class": "^0.1.5",
         "fpdf/fpdf": "^1.81",
         "vlucas/phpdotenv": "^3.6"
