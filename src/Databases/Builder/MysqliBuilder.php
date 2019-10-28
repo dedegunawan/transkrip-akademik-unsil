@@ -139,8 +139,7 @@ class MysqliBuilder extends BaseDatabaseBuilder
                     $this->getUsername()??'root',
                     $this->getPasswd()??'',
                     $this->getDbname()??null,
-                    $this->getPort()??'3306',
-                    $this->getSocket()??null
+                    $this->getPort()??'3306'
                 );
                 $this->connection = $mysqli;
             } catch (\Exception $exception) {
