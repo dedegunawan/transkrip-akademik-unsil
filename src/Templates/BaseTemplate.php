@@ -97,15 +97,16 @@ class BaseTemplate implements Template
 
     ];
 
+    protected static $pdf;
 
     public static function getPdf()
     {
-        static $pdf;
-        if ($pdf==null) {
-            $pdf = new CustomPdf();
+        if (self::$pdf==null) {
+            self::$pdf = new CustomPdf();
         }
-        return $pdf;
+        return self::$pdf;
     }
+
     public function BuatHeaderTranskrip()
     {
         $transkrip_akademik = TranskripAkademikUnsil::getInstance();
