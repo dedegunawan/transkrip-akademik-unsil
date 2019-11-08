@@ -157,7 +157,7 @@ class BaseTemplate implements Template
             strtoupper($konsentrasi->getNamaProdi())
         );
 
-        if (!empty($konsentrasi)) {
+        if (!empty($konsentrasi) && $konsentrasi->getNamaKonsentrasi()) {
             $arr[] = array(
                 $this->getKonsentrasi(),
                 ':',
