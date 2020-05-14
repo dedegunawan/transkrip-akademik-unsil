@@ -524,11 +524,7 @@ class BaseTemplate implements Template
     public function getTinggiBaris()
     {
         $ju = TranskripAkademikUnsil::getInstance()->getKrsCollection()->count();
-        if ($ju == 70) {
-            $ti = 2.5;
-        } elseif ($ju == 69) {
-            $ti = 2.53;
-        } elseif ($ju == 68) {
+        if ($ju == 68) {
             $ti = 2.57;
         } elseif ($ju == 67) {
             $ti = 2.6;
