@@ -46,6 +46,10 @@ use DedeGunawan\TranskripAkademikUnsil\Utilities\CustomPdf;
  * @method getCatatan(),
  * @method setIpk($value),
  * @method getIpk(),
+ * @method setNik($value),
+ * @method getNik(),
+ * @method setPin($value),
+ * @method getPin(),
  * @method setPredikatKelulusan($value),
  * @method getPredikatKelulusan(),
  */
@@ -71,6 +75,8 @@ class BaseTemplate implements Template
 
         'ipk' => 'Indeks Prestasi Kumulatif (IPK) = ',
         'predikat_kelulusan' => 'Predikat Kelulusan : ',
+        'nik' => 'NIK',
+        'pin' => 'PIN',
 
         'with_header' => true,
         'with_footer' => true
@@ -87,6 +93,8 @@ class BaseTemplate implements Template
         'konsentrasi' => 'Concentration',
         'status_akreditasi' => 'Acreditation Status',
         'tanggal_lulus' => 'Graduate Date',
+        'nik' => 'NIK',
+        'pin' => 'PIN',
 
         'jumlah_mata_kuliah' => 'Number of Subjects : ',
         'jumlah_total' => 'Total Number :',
@@ -173,9 +181,14 @@ class BaseTemplate implements Template
             strtoupper($konsentrasi->getStatusAkreditasi())
         );
         $arr[] = array(
-            $this->getTanggalLulus(),
+            $this->getNik(),
             ':',
-            strtoupper($transkrip_akademik->getKelulusan()->getTanggalLulus()->getFormatTextualMonth())
+            strtoupper($mahasiswa->getNik())
+        );
+        $arr[] = array(
+            $this->getPin(),
+            ':',
+            strtoupper($mahasiswa->getPin())
         );
 
         //HEADER NAMA

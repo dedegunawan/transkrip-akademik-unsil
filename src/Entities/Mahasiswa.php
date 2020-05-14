@@ -14,6 +14,8 @@ class Mahasiswa extends BaseEntity
     protected $npm;
     protected $nama_mahasiswa;
     protected $tempat_lahir;
+    protected $nik;
+    protected $pin;
     /**
      * @var $tanggal_lahir Tanggal
      */
@@ -103,6 +105,38 @@ class Mahasiswa extends BaseEntity
     public function setUrlFoto($url_foto)
     {
         $this->url_foto = $url_foto;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getNik()
+    {
+        return $this->nik;
+    }
+
+    /**
+     * @param mixed $nik
+     */
+    public function setNik($nik): void
+    {
+        $this->nik = $nik;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getPin()
+    {
+        return $this->pin;
+    }
+
+    /**
+     * @param mixed $pin
+     */
+    public function setPin($pin): void
+    {
+        $this->pin = $pin;
     }
 
 
