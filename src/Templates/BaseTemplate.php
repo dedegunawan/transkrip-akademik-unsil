@@ -574,6 +574,7 @@ class BaseTemplate implements Template
         } else {
             $ti = 3.56;
         }
+        $ti = 3.56;
         return $ti;
     }
 
