@@ -180,16 +180,25 @@ class BaseTemplate implements Template
             ':',
             strtoupper($konsentrasi->getStatusAkreditasi())
         );
+
+        $arr[] = array(
+            $this->getTanggalLulus(),
+            ':',
+            strtoupper($transkrip_akademik->getKelulusan()->getTanggalLulus()->getFormatTextualMonth())
+        );
         $arr[] = array(
             $this->getNik(),
             ':',
             strtoupper($mahasiswa->getNik())
         );
-        $arr[] = array(
-            $this->getPin(),
-            ':',
-            strtoupper($mahasiswa->getPin())
-        );
+        if ($mahasiswa->getPin())
+        {
+            $arr[] = array(
+                $this->getPin(),
+                ':',
+                strtoupper($mahasiswa->getPin())
+            );
+        }
 
         //HEADER NAMA
         foreach ($arr as $a) {
