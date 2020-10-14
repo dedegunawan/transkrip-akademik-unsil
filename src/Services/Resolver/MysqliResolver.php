@@ -141,7 +141,8 @@ class MysqliResolver implements ResolverInterface
 
         $query = "select DISTINCT(m.KonsentrasiID) as _KonsentrasiID, COUNT(k.KRSID) as _countKID
             from krs k left outer join mk m on m.MKID=k.MKID and m.KodeID='UNSIL'
-            where k.MhswID='$npm' and m.KonsentrasiID!=0 and k.KodeID='UNSIL'
+            left join konsentrasi on konsentrasi.KonsentrasiID=m.KonsentrasiID
+            where k.MhswID='$npm' and m.KonsentrasiID!=0 and k.KodeID='UNSIL' and konsentrasi.NA='N'
             group by m.KonsentrasiID
             order by _countKID DESC";
         $KonsentrasiID = @$database->selectField($query);
