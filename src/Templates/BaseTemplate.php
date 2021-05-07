@@ -84,6 +84,7 @@ class BaseTemplate implements Template
 
     protected $optionsEn = [
         'judul' => 'TRANSCRIPT ACADEMIC',
+        'nomor' => "Number : ",
 
         'nama' => 'Grants Certificate to',
         'tempat_tanggal_lahir' => 'Place, Date of Birth',
