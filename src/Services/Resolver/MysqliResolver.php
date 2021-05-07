@@ -90,6 +90,10 @@ class MysqliResolver implements ResolverInterface
         }
 
         $data = $database->selectOne("SELECT ta.noseri,ta.Tgllulus, ta.Judul FROM ta WHERE MhswID='$npm' ");
+
+        if ($this->getLanguage()=='en') {
+            $data = $database->selectOne("SELECT ta.noseri,ta.Tgllulus, ta.Judul_en as Judul FROM ta WHERE MhswID='$npm' ");
+        }
         $nomor_transkrip = $data['noseri'];
         $tanggal_lulus = $data['Tgllulus'];
         $judul = $data['Judul'];
