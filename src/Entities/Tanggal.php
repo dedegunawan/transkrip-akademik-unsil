@@ -102,7 +102,7 @@ class Tanggal extends BaseEntity
     {
         return array(
             'January' => 'Januari',
-            'February' => 'Pebruari',
+            'February' => 'Februari',
             'March' => 'Maret',
             'April' => 'April',
             'May' => 'Mei',
